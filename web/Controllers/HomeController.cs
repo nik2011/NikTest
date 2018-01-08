@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SZHome.Common;
-using SZHome.Entity;
 using SZHomeDLL;
 
 namespace web.Controllers
@@ -60,6 +59,7 @@ namespace web.Controllers
                 resultList.AddRange(list);
             }
             coinResultList = coinResultList.OrderByDescending(x=>x.Proportion).ToList();
+            resultList = HtmlDetailHelper.OrderCoinList(resultList, coinResultList);
             hr.StatsCode = 200;
             hr.Message = "成功";
             hr.Data = new {

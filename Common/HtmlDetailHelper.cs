@@ -104,6 +104,23 @@ namespace SZHome.Common
         }
 
         /// <summary>
+        /// coin排序
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="coinList"></param>
+        /// <returns></returns>
+        public static List<BitcoinEntity> OrderCoinList(List<BitcoinEntity> list,List<CoinResultEntity> coinList)
+        {
+            List<BitcoinEntity> resultList = new List<BitcoinEntity>();
+            foreach (var item in coinList)
+            {
+              resultList.AddRange(list.Where(x=>x.Name==item.Name));
+            }
+            return resultList;
+        }
+
+
+        /// <summary>
         /// 处理平台html数据
         /// </summary>
         /// <param name="htmlDetail"></param>
