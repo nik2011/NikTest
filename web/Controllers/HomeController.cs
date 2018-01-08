@@ -34,12 +34,11 @@ namespace web.Controllers
         {
             HandleResult hr = new HandleResult();
             List<BitcoinEntity> resultList = new List<BitcoinEntity>();
+            List<CoinResultEntity> coinResultList = new List<CoinResultEntity>();
             if (string.IsNullOrWhiteSpace(coins))
             {
                coins = ConfigHelper.GetConfigString("coins");
             }
-            // int count =ConvertHelper.StringToInt(ConfigHelper.GetConfigString("coinsCount"));
-            //decimal percent =Convert.ToDecimal(ConfigHelper.GetConfigString("coinsPercent"));
             List<string> coinList = coins.ToStringList();
             foreach (var item in coinList)
             {
@@ -50,19 +49,23 @@ namespace web.Controllers
                 string htmlDetail = RequestHelper.ImplementOprater(requestEnt);
                 string msg = "";
                 List<BitcoinEntity> list = new List<BitcoinEntity>();
-                string summry = "";
-                bool matchResult = HtmlDetailHelper.HandleCoinHtml(item, htmlDetail, ref list,ref summry,ref msg,count,percent);
+               // string summry = "";
+                bool matchResult = HtmlDetailHelper.HandleCoinHtml(item, htmlDetail, ref list,ref coinResultList, ref msg,count,percent);
                 if (!matchResult)
                 {
                     LogHelper.LogInfo(item +": "+msg);
                     continue;
                 }
-                hr.Other += summry+"  ";
+                //hr.Other += summry+"  ";
                 resultList.AddRange(list);
             }
+            coinResultList = coinResultList.OrderByDescending(x=>x.Proportion).ToList();
             hr.StatsCode = 200;
             hr.Message = "成功";
-            hr.Data = resultList;
+            hr.Data = new {
+                list=resultList,
+                coinList=coinResultList
+            };
             return Json(hr);
         }
 

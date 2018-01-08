@@ -81,7 +81,7 @@ function GetList() {
         success: function (data) {
             layerLoading({ close: true });
             var html = '';
-            $(data.Data).each(function (i, item) {
+            $(data.Data.list).each(function (i, item) {
                 html += _.template($("#tempList").html())({
                     data: item
                 });
@@ -95,7 +95,11 @@ function GetList() {
                 return;
             }
             $("#tablist").html(html);
-            $("#summry").text(data.Other);
+            var summary = '';
+            $(data.Data.coinList).each(function (i, item) {
+                summary += item.Name + ":最大差价" + item.Margin + "（" + item.Proportion + "%） ";
+            });
+            $("#summry").text(summary);
            // UpdateTitle();
         },
         complete: function () {

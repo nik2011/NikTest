@@ -56,8 +56,7 @@ namespace SZHome.Entity
         /// <summary>
         /// 占比
         /// </summary>
-        public string Proportion
-        { get; set; }
+        public string Proportion { get; set; }
       
     }
 }

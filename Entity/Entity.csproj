@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoinResultEntity.cs" />
     <Compile Include="BitcoinEntity.cs" />
     <Compile Include="HandleResult.cs" />
     <Compile Include="ImageUrlEntity.cs" />

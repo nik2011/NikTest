@@ -17,7 +17,8 @@ namespace SZHome.Common
         /// </summary>
         /// <param name="htmlDetail"></param>
         /// <param name="sourceId"></param>
-        public static bool HandleCoinHtml(string coin, string htmlDetail, ref List<BitcoinEntity> resultList,ref string summry, ref string msg, int count = 5, decimal defaultPrecent = (decimal)0.1)
+        public static bool HandleCoinHtml(string coin, string htmlDetail, ref List<BitcoinEntity> resultList, ref List<CoinResultEntity> coinResultList, ref string msg
+            , int count = 5, decimal defaultPrecent = (decimal)0.1)
         {
             htmlDetail = CommonTools.Compress(htmlDetail);
             List<BitcoinEntity> list = new List<BitcoinEntity>();
@@ -76,7 +77,6 @@ namespace SZHome.Common
                     continue;
                 }
                 list.Add(coinEnt);
-                // tdNodeList.Clear();
             }
             if (list.Count < 2)
             {
@@ -92,7 +92,12 @@ namespace SZHome.Common
             if (percent >= defaultPrecent)
             {
                 resultList = list;
-                summry =$"{coin}: 最大差价{margin}（{(percent*100).ToString("f2")}%）";
+                coinResultList.Add(new CoinResultEntity() {
+                  Name=coin,
+                  Margin=margin,
+                  Proportion=Convert.ToDecimal((percent * 100).ToString("f2"))
+                });
+               // summry =$"{coin}: 最大差价{margin}（{(percent*100).ToString("f2")}%）";
                 return true;
             }
             return false;
