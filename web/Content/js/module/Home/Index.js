@@ -5,7 +5,9 @@ var flushTime;
 var isStart = true;
 
 $(function () {
-
+    $("#btnSearch").click(function () {
+        GetList();
+    });
 
     $("#coins,#count,#percent").change(function () {
         GetList();
@@ -58,11 +60,18 @@ function GetList() {
     if (!isStart) {
         return;
     }
+    var coins = '';
+    $("input[name=coins]:checked").each(function () {
+        coins += $(this).val() + ",";
+    });
+    if (coins != '') {
+        coins = coins.substr(0, coins.length - 1);
+    }
     $.ajax({
         url: "/Home/GetCoinList/",
         type: "POST",
         data: {
-            coins: $("#coins").val(),
+            coins: coins,
             count: $("#count").val(),
             percent: $("#percent").val()
         },

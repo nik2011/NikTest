@@ -1,4 +1,4 @@
-﻿using Entity;
+﻿using SZHome.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,7 +87,7 @@ namespace web.Controllers
         public ActionResult GetPlatFormList(string platForms,decimal percent)
         {
             HandleResult hr = new HandleResult();
-            List<Dictionary<string,object>> resultList = new List<Dictionary<string, object>>();
+            List<PlatResultEntity> resultList = new List<PlatResultEntity>();
 
             List<BitcoinEntity> platCoinlist = new List<BitcoinEntity>();
             List<string> platFormList = platForms.ToStringList();

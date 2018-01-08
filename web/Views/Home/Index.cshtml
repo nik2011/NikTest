@@ -4,16 +4,15 @@
 }
 <h1>首页数据</h1>
 <div class="top" style="margin-left:10px;">
-    <select id="coins" class="h28 lh28 mr8">
-        <option selected="selected" value="">全部币</option>
-        @{
-            List<string> coinList = ViewBag.coinList;
-            foreach (string item in coinList)
-            {
-                <option value="@item">@item</option>
-            }
+    全部币
+    @{
+        List<string> coinList = ViewBag.coinList;
+        foreach (var item in coinList)
+        {
+            <label><input type="checkbox" name="coins" value="@item" />@item</label>
         }
-    </select>
+    }
+    <br />
     数量
     <select id="count" class="h28 lh28 mr8">
         @{
@@ -59,6 +58,7 @@
             }
         }
     </select>
+    <input type="button" class="butbase w75 lh28 f14 bg-blue" value="搜索" id="btnSearch" />
     <input type="button" class="butbase w75 lh28 f14 bg-blue" style="margin-left:20px;" value="暂停" id="btnStop" />
 
     <input type="button" class="butbase w75 lh28 f14 bg-blue" value="刷新" id="btnFlash" />
@@ -89,7 +89,7 @@
 @section Js{
 
     <script src="/Content/js/lib/Underscore/underscore-min.js"></script>
-    <script src="/Content/js/module/Home/Index.js?v=2017010601"></script>
+    <script src="/Content/js/module/Home/Index.js?v=20170108"></script>
     <script type="text/javascript">
         var i = 0;
         var name = '';

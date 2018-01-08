@@ -1,4 +1,4 @@
-﻿using Entity;
+﻿using SZHome.Entity;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -167,16 +167,16 @@ namespace SZHome.Common
         /// </summary>
         /// <param name="platCoinlist"></param>
         /// <returns></returns>
-        public static List<Dictionary<string, object>> CompareCoinData(List<BitcoinEntity> platCoinlist, decimal defaultPrecent = (decimal)0.1)
+        public static List<PlatResultEntity> CompareCoinData(List<BitcoinEntity> platCoinlist, decimal defaultPrecent = (decimal)0.1)
         {
-            List<Dictionary<string, object>> resultList = new List<Dictionary<string, object>>();
+            List<PlatResultEntity> resultList = new List<PlatResultEntity>();
             var nameList=platCoinlist.GroupBy(x=>x.NameEnglish).Select(x=>(new { nameEnglish = x.Key,count=x.Count()})).ToList();
             foreach (var item in nameList)
             {
                 if (item.count<2) {
                     continue;
                 }
-                Dictionary<string, object> dic = new Dictionary<string, object>();
+                PlatResultEntity result = new PlatResultEntity();
                 List<BitcoinEntity> selectList= platCoinlist.Where(x=>x.NameEnglish == item.nameEnglish).ToList();
                 if (selectList.Count < 2)
                 {
@@ -194,17 +194,18 @@ namespace SZHome.Common
                 {
                     continue;
                 }
-                dic["Name"] = selectList[0].NameHtml;
-                dic["ExchangeType"] = selectList[0].ExchangeType+"-"+ selectList[1].ExchangeType;
-                dic["Price"] = selectList[0].Price + "/" + selectList[1].Price; ;
-                dic["Margin"] = margin;
-                dic["Percent"] = (percent * 100).ToString("f2");
-                dic["Amout"] = selectList[0].Amout+"/"+ selectList[1].Amout;
-                dic["TotalPrice"] = selectList[0].TotalPrice+"/"+ selectList[1].TotalPrice;
-                dic["Time"] = selectList[0].Time+"/"+ selectList[1].Time;
-                dic["Proportion"] = selectList[0].Percent+"/"+selectList[1].Percent;
-                resultList.Add(dic);
+                result.NameHtml = selectList[0].NameHtml;
+                result.ExchangeType = selectList[0].ExchangeType+"-"+ selectList[1].ExchangeType;
+                result.Price = selectList[0].Price + "/" + selectList[1].Price;
+                result.Margin = margin;
+                result.Percent=Convert.ToDecimal((percent * 100).ToString("f2"));
+                result.Amout= selectList[0].Amout+"/"+ selectList[1].Amout;
+                result.TotalPrice= selectList[0].TotalPrice+"/"+ selectList[1].TotalPrice;
+                result.Time = selectList[0].Time+"/"+ selectList[1].Time;
+                result.Proportion = selectList[0].Percent+"/"+selectList[1].Percent;
+                resultList.Add(result);
             }
+            resultList = resultList.OrderByDescending(x=>Math.Abs(x.Percent)).ToList();
 
             return resultList;
         }
