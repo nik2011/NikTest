@@ -1,0 +1,6 @@
+D:\NikTest\DocX_test\bin\Debug\DocX_test.exe.config
+D:\NikTest\DocX_test\bin\Debug\DocX_test.exe
+D:\NikTest\DocX_test\bin\Debug\DocX_test.pdb
+D:\NikTest\DocX_test\bin\Debug\DocX.dll
+D:\NikTest\DocX_test\obj\Debug\DocX_test.exe
+D:\NikTest\DocX_test\obj\Debug\DocX_test.pdb

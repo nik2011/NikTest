@@ -1,0 +1,29 @@
+﻿
+2016/6/24 10:49:18：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:10:12：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:17:03：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:17:07：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:17:24：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:17:59：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:23:36：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:30:03：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 11:30:26：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 12:58:01：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 12:58:16：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 12:58:53：{"StatusCode":200,"Message":"登陆成功","Data":null,"Other":null}
+2016/6/24 14:14:05：
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录信息</title>
+    <script src="http://static.szhome.com/global/script/jquery-1.8.0.min.js" type="text/javascript"></script> 
+    <script src="http://passport.szhome.com/sso/sso.js?v=1.5" type="text/javascript"></script>
+</head>
+<body>
+    <span>正在登录中...</span>
+    <script type="text/javascript">window.top.location.replace('http://bbs.szhome.com/50.html');</script>
+</body>
+</html>

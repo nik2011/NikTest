@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "首页数据";
+}
+<h1>首页数据</h1>
+<div class="top" style="margin-left:10px;">
+    <select id="coins" class="h28 lh28 mr8">
+        <option selected="selected" value="">全部币</option>
+        @{
+            List<string> coinList = ViewBag.coinList;
+            foreach (string item in coinList)
+            {
+                <option value="@item">@item</option>
+            }
+        }
+    </select>
+    数量
+    <select id="count" class="h28 lh28 mr8">
+        @{
+            for (int i =3; i <= 10; i++)
+            {
+                string sel = "";
+                if (i == 6)
+                {
+                    sel = "selected=selected";
+                }
+                <option @sel value="@(i)">@(i)</option>
+            }
+        }
+    </select>
+    差价
+    <select id="percent" class="h28 lh28 mr8">
+        @{
+            int[] percentArr = {2, 5, 10,15, 20, 30,40,50,60,70 };
+            for (int i =0; i <percentArr.Length; i++)
+            {
+                string sel = "";
+                if (percentArr[i] == 10)
+                {
+                    sel = "selected=selected";
+                }
+                string value = (percentArr[i] / 100.0).ToString("f2");
+                <option @sel value="@(value)">@(percentArr[i])%</option>
+            }
+        }
+    </select>
+    刷新时间
+    <select id="flushTime" class="h28 lh28 mr8">
+        @{
+            int[] timeArr = {3,5,10,20,30,60,120,300 };
+            for (int i =0; i <timeArr.Length; i++)
+            {
+                string sel = "";
+                if (timeArr[i] ==60)
+                {
+                    sel = "selected=selected";
+                }
+                <option @sel value="@(timeArr[i]*1000)">@(timeArr[i])s</option>
+            }
+        }
+    </select>
+    <input type="button" class="butbase w75 lh28 f14 bg-blue" style="margin-left:20px;" value="暂停" id="btnStop" />
+
+    <input type="button" class="butbase w75 lh28 f14 bg-blue" value="刷新" id="btnFlash" />
+
+    <a href="/home/PlatForm" class="butbase w75 lh28 f14 bg-blue" target="_blank">平台数据</a>
+    <p>
+        <span>结论：</span><span id="summry"></span>
+    </p>
+</div>
+<table class="tab tc" id="tbUsers" style="margin-bottom:100px;">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>币种</th>
+            <th>交易所</th>
+            <th>交易对</th>
+            <th>当前价格</th>
+            <th>更新时间</th>
+            <th>成交量</th>
+            <th>成交总量</th>
+            <th>占比</th>
+           
+        </tr>
+    </thead>
+    <tbody id="tablist"></tbody>
+</table>
+
+@section Js{
+
+    <script src="/Content/js/lib/Underscore/underscore-min.js"></script>
+    <script src="/Content/js/module/Home/Index.js?v=2017010601"></script>
+    <script type="text/javascript">
+        var i = 0;
+        var name = '';
+        var backColor = '';
+        var type = 1;
+    </script>
+
+    <script type="text/template" id="tempList">
+        <%
+        if(name==''||name==data.Name)
+        {
+        i++;
+        }
+        else{
+        i=1;
+        type=type==1?2:1;
+        }
+        name=data.Name;
+        if(type==2)
+        {
+        backColor="#f1f1f1";
+        }else{
+        backColor="";
+        }
+        %>
+        <tr style="background-color:<%=backColor%>">
+            <td><%=i%></td>
+            <td>
+                <%=data.Name%>
+            </td>
+            <td><%=data.PlatFormHtml%></td>
+            <td><%=data.ExchangeType%></td>
+            <td><%=data.Price%></td>
+            <td><%=data.Time%></td>
+            <td><%=data.Amout%></td>
+            <td><%=data.TotalPrice%></td>
+            <td><%=data.Percent%>%</td>
+           
+        </tr>
+    </script>
+}
+
+

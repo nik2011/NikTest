@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/Content/css/style.css" rel="stylesheet" />
+    <link href="/Content/css/reset.css" rel="stylesheet" />
+    <link href="/Content/css/szhomebbsadmin.css" rel="stylesheet" />
+    <link href="/Content/css/pages.css" rel="stylesheet" />
+    @RenderSection("Css", false)
+    <style type="text/css" media="screen">
+        html, body {
+            height: 100%;
+           
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+
+        #flashContent {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContent">
+        @RenderBody()
+    </div>
+    <script src="/Content/js/lib/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="~/Content/js/lib/layer/layer.js"></script>
+    <script src="/Content/js/module/Commons.js?v=20160612"></script>
+    @RenderSection("Js", false)
+</body>
+</html>

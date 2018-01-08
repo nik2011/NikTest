@@ -1,0 +1,6 @@
+D:\NikTest\JiSuanQi\bin\Debug\JiSuanQi.exe.config
+D:\NikTest\JiSuanQi\bin\Debug\JiSuanQi.exe
+D:\NikTest\JiSuanQi\bin\Debug\JiSuanQi.pdb
+D:\NikTest\JiSuanQi\obj\Debug\JiSuanQi.csprojResolveAssemblyReference.cache
+D:\NikTest\JiSuanQi\obj\Debug\JiSuanQi.exe
+D:\NikTest\JiSuanQi\obj\Debug\JiSuanQi.pdb

@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "实现简单的实时消息推送";
+}
+<link href="~/Scripts/bootstrap.css" rel="stylesheet" />
+<script src="/Content/js/lib/jquery/jquery-1.8.0.min.js"></script>
+<script src="~/Content/js/lib/SignalR/jquery.signalR-2.2.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<!-- 本地没有，动态生成 -->
+<script src="~/signalr/hubs"></script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+            <ul id="message_box"></ul>
+        </div>
+        发送者名称:<input id="text_name" class="form-control" /><br />
+        消息内容:
+        <textarea id="text_message" class="form-control" rows="3"></textarea>
+        <br />
+        <button id="btn_send" class="btn btn-block btn-success">Send</button>
+
+        <button id="logOut" class="btn btn-block btn-success">退出</button>
+    </div>
+</div>
+
+<script>
+    $(function () {
+       // var $messageBox = $('#message_box');
+       // var $textMessage = $('#text_message');
+      //  var $textName = $('#text_name');
+        
+       
+      
+
+        //客户端先与服务器连接起来，拿到服务器的代理操作对象
+        var hubConnection = $.connection.chatHub;
+       
+        registerClientMethods(hubConnection);
+       
+
+        //启动连接到服务器
+        $.connection.hub.start().done(function () {
+            console.log(hubConnection.id);
+            registerEvents(hubConnection);
+        });
+    });
+
+
+
+    //注册客户端事件
+    function registerEvents(hubConnection) {
+
+        var url = window.location.href;
+        var userID = Math.floor(Math.random() * 100);
+        $('#text_name').val(userID);
+        hubConnection.server.connect(url,userID);
+
+        $('#btn_send').bind('click', function () {
+            //调用服务端的函数
+            hubConnection.server.sendMessage($('#text_name').val(), $('#text_message').val());
+        });
+
+        $("#logOut").click(function () {
+            hubConnection.server.exit(userID);
+
+        });
+
+    }
+
+
+
+    //注册客户端方法
+    function registerClientMethods(hubConnection) {
+
+        hubConnection.client.onConnected = function (id, userID, url) {
+            console.log("与服务器建立了链接" + url);
+        }
+
+        hubConnection.client.onUserDisconnected = function (id, userID) {
+            console.log("与服务器取消了链接");
+        }
+
+        hubConnection.client.onNewUserConnected = function (id, userID) {
+            alert("新用户完成为合法");
+        }
+
+        hubConnection.client.onExistUserConnected = function (id, userID) {
+            alert("用户" + userID + "不能重复登陆");
+        }
+
+        hubConnection.client.onExit = function (id, userID) {
+            alert("用户" + userID + "成功退出！");
+        }
+
+        //注册客户端函数
+        hubConnection.client.receiveMessage = function (name, message) {
+            $('#message_box').append('<li><b>' + name + '</b> say:' + message + '</li>')
+        }
+
+    }
+</script>
+

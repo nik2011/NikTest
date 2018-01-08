@@ -1,0 +1,27 @@
+@charset "utf-8";
+/*全局设置*/
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, code,
+form, fieldset, legend, input, button,
+textarea, p, blockquote, th, td {margin: 0;padding: 0;}
+fieldset, img { border:none; }
+address, caption, cite, code, dfn, th, var,em{ font-style:normal; font-weight:normal; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+input::-moz-focus-inner { border:none; padding:0; }
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+body { color:#333; font:13px "SimSun","宋体","Arial Narrow",HELVETICA; }
+textarea { resize:none; }
+table {border-collapse: collapse;border-spacing: 0; }
+/*清除浮动*/
+.fix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.fix{ zoom:1; }
+.clear{ clear:both; height:0; font-size:0; overflow:hidden; }
+/*全局链接颜色*/
+a{ color:blue; text-decoration:none; }
+a:hover, a:active { text-decoration:underline; }
+/*左边右边浮动*/
+.left{ float:left; display:inline;}
+.right{ float:right; display:inline;}
+

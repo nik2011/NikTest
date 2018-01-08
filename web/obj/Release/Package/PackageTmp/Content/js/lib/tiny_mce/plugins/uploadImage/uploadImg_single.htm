@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>上传图片</title>
+    <script src="/Content/js/lib/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="/Content/js/lib/Form/3.36.0/Form.js" type="text/javascript"></script>
+     <script src="/Content/js/lib/tiny_mce/tiny_mce_popup.js" type="text/javascript"></script>
+    <link href="/Content/js/lib/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        //测试发现uploadify与layer有冲突，两者共存会导致chrome浏览器出现崩溃，用下面方法解决或使用$.getScript延迟加载uploadify解决
+        document.write("<script type='text/javascript' "
+          + "src='/Content/js/lib/uploadify/jquery.uploadify-3.2.js?" + new Date()
+          + "'></s" + "cript>");
+    </script>
+</head>
+<body>
+    <div>
+        <div id="fileQueue"></div>
+        <input type="file" name="flUpload" id="uploadify" />
+
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            //上传图片
+            $('#uploadify').uploadify({
+                'buttonText': '选择图片',
+                'buttonClass': 'browser',
+                'width': 90,
+                'height': 25,
+                'formData': { 'folderName': "Present" }, //发送给后台的其他参数通过formData指定
+                'fileObjName': 'flUpload', //文件对象名称，用于服务器获取 默认 Filedata
+                'fileTypeExts': '*.jpg;*.png;*.gif;',
+                'swf': '/Content/js/lib/uploadify/uploadify.swf',
+                'uploader': '/Help/UploadImage_editor/',
+                'multi': false,//是否上传多个文件
+                'queueID': 'fileQueue',
+                'auto': true,//是否自动上传
+                'onUploadSuccess': function (file, data, response) {
+                    var resJson = JsonEval(data);
+                    if (resJson.StatsCode == 200) {
+                        html = '<p style="text-align: center;"><img src="' + resJson.Message + '" alt=""/></p>';
+                        tinyMCEPopup.editor.execCommand('mceInsertContent', false, html);
+
+                    }
+                    else {
+                        alert(resJson.Message);
+                    }
+                },
+                'onQueueComplete': function (queueData) {
+                    setTimeout("tinyMCEPopup.close();", 100);
+                }
+            });
+        });
+
+
+        //把string转化为json数据
+        function JsonEval(jsonObj) {
+            var str = "";
+            try {
+                str = eval(jsonObj);
+            } catch (err) {
+                str = eval("(" + jsonObj + ")");
+            }
+            return str;
+        }
+
+    </script>
+
+</body>
+</html>

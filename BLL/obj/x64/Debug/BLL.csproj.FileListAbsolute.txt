@@ -1,0 +1,15 @@
+D:\NikTest\BLL\bin\x64\Debug\BLL.dll
+D:\NikTest\BLL\bin\x64\Debug\BLL.pdb
+D:\NikTest\BLL\bin\x64\Debug\Common.dll
+D:\NikTest\BLL\bin\x64\Debug\DAL.dll
+D:\NikTest\BLL\bin\x64\Debug\Entity.dll
+D:\NikTest\BLL\bin\x64\Debug\Newtonsoft.Json.dll
+D:\NikTest\BLL\bin\x64\Debug\SZHomeDLL.dll
+D:\NikTest\BLL\bin\x64\Debug\YiTu.DBUtility.dll
+D:\NikTest\BLL\bin\x64\Debug\Common.pdb
+D:\NikTest\BLL\bin\x64\Debug\DAL.pdb
+D:\NikTest\BLL\bin\x64\Debug\Entity.pdb
+D:\NikTest\BLL\bin\x64\Debug\SZHomeDLL.xml
+D:\NikTest\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\NikTest\BLL\obj\x64\Debug\BLL.dll
+D:\NikTest\BLL\obj\x64\Debug\BLL.pdb
