@@ -29,7 +29,6 @@ namespace SZHome.Common
             HtmlNodeCollection trNodeList = doc.DocumentNode.SelectNodes("//table[@id='markets']//tbody//tr");
             if (trNodeList == null || trNodeList.Count == 0)
             {
-                //LogHelper.LogInfo(coin+ " 获取不到数据");
                 msg = "获取不到数据";
                 return false;
             }

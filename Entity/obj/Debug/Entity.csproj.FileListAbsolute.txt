@@ -7,4 +7,3 @@ E:\NikTest\Entity\bin\Debug\Entity.pdb
 E:\NikTest\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
 E:\NikTest\Entity\obj\Debug\Entity.dll
 E:\NikTest\Entity\obj\Debug\Entity.pdb
-D:\NikTest\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache

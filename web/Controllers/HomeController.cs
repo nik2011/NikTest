@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using SZHome.Common;
 using SZHomeDLL;
+using SZHome.Filter;
 
 namespace web.Controllers
 {
@@ -28,7 +29,7 @@ namespace web.Controllers
         /// 获取币数据详情
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost,AjaxFilter,JsonException]
         public ActionResult GetCoinList(string coins,int count,decimal percent)
         {
             HandleResult hr = new HandleResult();
@@ -86,7 +87,7 @@ namespace web.Controllers
         /// 获取平台数据详情
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost, AjaxFilter, JsonException]
         public ActionResult GetPlatFormList(string platForms,decimal percent)
         {
             HandleResult hr = new HandleResult();
