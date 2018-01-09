@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://smsservice.inside.szhome.com/sms_ws.asmx?wsdl" docRef="http://smsservice.inside.szhome.com/sms_ws.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://smsservice.inside.szhome.com/sms_ws.asmx" xmlns:q1="http://smsservice.inside.szhome.com/" binding="q1:sms_wsSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://smsservice.inside.szhome.com/sms_ws.asmx" xmlns:q2="http://smsservice.inside.szhome.com/" binding="q2:sms_wsSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

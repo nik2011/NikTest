@@ -191,6 +191,8 @@ namespace SZHome.Common
         public static List<PlatResultEntity> CompareCoinData(List<BitcoinEntity> platCoinlist, decimal defaultPrecent = (decimal)0.1)
         {
             List<PlatResultEntity> resultList = new List<PlatResultEntity>();
+            //发短信的币
+            List<string> coinsSmsList = ConfigHelper.GetConfigString("CoinsSms").ToLower().ToStringList();
             var nameList=platCoinlist.GroupBy(x=>x.NameEnglish).Select(x=>(new { nameEnglish = x.Key,count=x.Count()})).ToList();
             foreach (var item in nameList)
             {
@@ -225,8 +227,14 @@ namespace SZHome.Common
                 result.Time = selectList[0].Time+"/"+ selectList[1].Time;
                 result.Proportion = selectList[0].Percent+"/"+selectList[1].Percent;
                 resultList.Add(result);
+                if (percent>=10&&coinsSmsList.Contains(selectList[0].NameEnglish.ToLower()))
+                {
+                    string phone = "13751131731";
+                    string msg = $"恭喜您，报名成功：{selectList[0].NameEnglish.Substring(0, 1)}-{percent.ToString("f0")}" ;
+                    SmsService.SendSMS(phone,msg);
+                }
             }
-            resultList = resultList.OrderByDescending(x=>Math.Abs(x.Percent)).ToList();
+            resultList = resultList.OrderByDescending(x=>x.Percent).ToList();
 
             return resultList;
         }
