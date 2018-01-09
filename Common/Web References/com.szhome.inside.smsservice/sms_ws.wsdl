@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://smsservice.inside.szhome.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://smsservice.inside.szhome.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://smsservice.inside.szhome.com/">
+      <s:element name="SendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgCotent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMessageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTemplateMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgCotent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTemplateMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendTemplateMessageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageMulti">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumbers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgCotent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageMultiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMessageMultiResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageValidateCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMessageValidateCodeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendValidateVoiceMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendValidateVoiceMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendValidateVoiceMessageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendValidateCodeMessage_Ucpaas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendValidateCodeMessage_UcpaasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendValidateCodeMessage_UcpaasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendValidateCodeMessage_CCPRest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendValidateCodeMessage_CCPRestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendValidateCodeMessage_CCPRestResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyValidateCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="appId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="validateCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyValidateCodeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendTemplateMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendTemplateMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendTemplateMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendTemplateMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageMultiSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageMulti" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageMultiSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageMultiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateVoiceMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendValidateVoiceMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateVoiceMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendValidateVoiceMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_UcpaasSoapIn">
+    <wsdl:part name="parameters" element="tns:SendValidateCodeMessage_Ucpaas" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_UcpaasSoapOut">
+    <wsdl:part name="parameters" element="tns:SendValidateCodeMessage_UcpaasResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_CCPRestSoapIn">
+    <wsdl:part name="parameters" element="tns:SendValidateCodeMessage_CCPRest" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_CCPRestSoapOut">
+    <wsdl:part name="parameters" element="tns:SendValidateCodeMessage_CCPRestResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="VerifyValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="msgCotent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendTemplateMessageHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="msgCotent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendTemplateMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageMultiHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumbers" type="s:string" />
+    <wsdl:part name="msgCotent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageMultiHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageValidateCodeHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageValidateCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateVoiceMessageHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateVoiceMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_UcpaasHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_UcpaasHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_CCPRestHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_CCPRestHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="VerifyValidateCodeHttpGetIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="validateCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyValidateCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="msgCotent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendTemplateMessageHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="msgCotent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendTemplateMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageMultiHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumbers" type="s:string" />
+    <wsdl:part name="msgCotent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageMultiHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageValidateCodeHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageValidateCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateVoiceMessageHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateVoiceMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_UcpaasHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_UcpaasHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_CCPRestHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendValidateCodeMessage_CCPRestHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="VerifyValidateCodeHttpPostIn">
+    <wsdl:part name="appId" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="phoneNumber" type="s:string" />
+    <wsdl:part name="validateCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyValidateCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="sms_wsSoap">
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageSoapIn" />
+      <wsdl:output message="tns:SendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <wsdl:input message="tns:SendTemplateMessageSoapIn" />
+      <wsdl:output message="tns:SendTemplateMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageMulti">
+      <wsdl:input message="tns:SendMessageMultiSoapIn" />
+      <wsdl:output message="tns:SendMessageMultiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageValidateCode">
+      <wsdl:input message="tns:SendMessageValidateCodeSoapIn" />
+      <wsdl:output message="tns:SendMessageValidateCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateVoiceMessage">
+      <wsdl:input message="tns:SendValidateVoiceMessageSoapIn" />
+      <wsdl:output message="tns:SendValidateVoiceMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_Ucpaas">
+      <wsdl:input message="tns:SendValidateCodeMessage_UcpaasSoapIn" />
+      <wsdl:output message="tns:SendValidateCodeMessage_UcpaasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_CCPRest">
+      <wsdl:input message="tns:SendValidateCodeMessage_CCPRestSoapIn" />
+      <wsdl:output message="tns:SendValidateCodeMessage_CCPRestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyValidateCode">
+      <wsdl:input message="tns:VerifyValidateCodeSoapIn" />
+      <wsdl:output message="tns:VerifyValidateCodeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="sms_wsHttpGet">
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpGetIn" />
+      <wsdl:output message="tns:SendMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <wsdl:input message="tns:SendTemplateMessageHttpGetIn" />
+      <wsdl:output message="tns:SendTemplateMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageMulti">
+      <wsdl:input message="tns:SendMessageMultiHttpGetIn" />
+      <wsdl:output message="tns:SendMessageMultiHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageValidateCode">
+      <wsdl:input message="tns:SendMessageValidateCodeHttpGetIn" />
+      <wsdl:output message="tns:SendMessageValidateCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateVoiceMessage">
+      <wsdl:input message="tns:SendValidateVoiceMessageHttpGetIn" />
+      <wsdl:output message="tns:SendValidateVoiceMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_Ucpaas">
+      <wsdl:input message="tns:SendValidateCodeMessage_UcpaasHttpGetIn" />
+      <wsdl:output message="tns:SendValidateCodeMessage_UcpaasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_CCPRest">
+      <wsdl:input message="tns:SendValidateCodeMessage_CCPRestHttpGetIn" />
+      <wsdl:output message="tns:SendValidateCodeMessage_CCPRestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyValidateCode">
+      <wsdl:input message="tns:VerifyValidateCodeHttpGetIn" />
+      <wsdl:output message="tns:VerifyValidateCodeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="sms_wsHttpPost">
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpPostIn" />
+      <wsdl:output message="tns:SendMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <wsdl:input message="tns:SendTemplateMessageHttpPostIn" />
+      <wsdl:output message="tns:SendTemplateMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageMulti">
+      <wsdl:input message="tns:SendMessageMultiHttpPostIn" />
+      <wsdl:output message="tns:SendMessageMultiHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageValidateCode">
+      <wsdl:input message="tns:SendMessageValidateCodeHttpPostIn" />
+      <wsdl:output message="tns:SendMessageValidateCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateVoiceMessage">
+      <wsdl:input message="tns:SendValidateVoiceMessageHttpPostIn" />
+      <wsdl:output message="tns:SendValidateVoiceMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_Ucpaas">
+      <wsdl:input message="tns:SendValidateCodeMessage_UcpaasHttpPostIn" />
+      <wsdl:output message="tns:SendValidateCodeMessage_UcpaasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_CCPRest">
+      <wsdl:input message="tns:SendValidateCodeMessage_CCPRestHttpPostIn" />
+      <wsdl:output message="tns:SendValidateCodeMessage_CCPRestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyValidateCode">
+      <wsdl:input message="tns:VerifyValidateCodeHttpPostIn" />
+      <wsdl:output message="tns:VerifyValidateCodeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="sms_wsSoap" type="tns:sms_wsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/SendTemplateMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageMulti">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/SendMessageMulti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageValidateCode">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/SendMessageValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateVoiceMessage">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/SendValidateVoiceMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_Ucpaas">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/SendValidateCodeMessage_Ucpaas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_CCPRest">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/SendValidateCodeMessage_CCPRest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyValidateCode">
+      <soap:operation soapAction="http://smsservice.inside.szhome.com/VerifyValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="sms_wsSoap12" type="tns:sms_wsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/SendTemplateMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageMulti">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/SendMessageMulti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageValidateCode">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/SendMessageValidateCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateVoiceMessage">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/SendValidateVoiceMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_Ucpaas">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/SendValidateCodeMessage_Ucpaas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_CCPRest">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/SendValidateCodeMessage_CCPRest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyValidateCode">
+      <soap12:operation soapAction="http://smsservice.inside.szhome.com/VerifyValidateCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="sms_wsHttpGet" type="tns:sms_wsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <http:operation location="/SendTemplateMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageMulti">
+      <http:operation location="/SendMessageMulti" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageValidateCode">
+      <http:operation location="/SendMessageValidateCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateVoiceMessage">
+      <http:operation location="/SendValidateVoiceMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_Ucpaas">
+      <http:operation location="/SendValidateCodeMessage_Ucpaas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_CCPRest">
+      <http:operation location="/SendValidateCodeMessage_CCPRest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyValidateCode">
+      <http:operation location="/VerifyValidateCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="sms_wsHttpPost" type="tns:sms_wsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <http:operation location="/SendTemplateMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageMulti">
+      <http:operation location="/SendMessageMulti" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageValidateCode">
+      <http:operation location="/SendMessageValidateCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateVoiceMessage">
+      <http:operation location="/SendValidateVoiceMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_Ucpaas">
+      <http:operation location="/SendValidateCodeMessage_Ucpaas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendValidateCodeMessage_CCPRest">
+      <http:operation location="/SendValidateCodeMessage_CCPRest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyValidateCode">
+      <http:operation location="/VerifyValidateCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="sms_ws">
+    <wsdl:port name="sms_wsSoap" binding="tns:sms_wsSoap">
+      <soap:address location="http://smsservice.inside.szhome.com/sms_ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="sms_wsSoap12" binding="tns:sms_wsSoap12">
+      <soap12:address location="http://smsservice.inside.szhome.com/sms_ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="sms_wsHttpGet" binding="tns:sms_wsHttpGet">
+      <http:address location="http://smsservice.inside.szhome.com/sms_ws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="sms_wsHttpPost" binding="tns:sms_wsHttpPost">
+      <http:address location="http://smsservice.inside.szhome.com/sms_ws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

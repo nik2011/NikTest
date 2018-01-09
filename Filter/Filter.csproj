@@ -7,8 +7,8 @@
     <ProjectGuid>{1CECF4C4-94F3-473F-89B3-FE4DB6077199}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Filter</RootNamespace>
-    <AssemblyName>Filter</AssemblyName>
+    <RootNamespace>SZHome.Filter</RootNamespace>
+    <AssemblyName>SZHome.Filter</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

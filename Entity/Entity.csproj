@@ -7,8 +7,8 @@
     <ProjectGuid>{38A14BB9-BF7B-4F1D-BF21-743E893A1FF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entity</RootNamespace>
-    <AssemblyName>Entity</AssemblyName>
+    <RootNamespace>SZHome.Entity</RootNamespace>
+    <AssemblyName>SZHome.Entity</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
