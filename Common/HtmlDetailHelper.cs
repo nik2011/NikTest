@@ -226,7 +226,7 @@ namespace SZHome.Common
                 result.Proportion = selectList[0].Percent+"/"+selectList[1].Percent;
                 resultList.Add(result);
             }
-            resultList = resultList.OrderByDescending(x=>Math.Abs(x.Percent)).ToList();
+            resultList = resultList.OrderByDescending(x=>x.Percent).ToList();
 
             return resultList;
         }

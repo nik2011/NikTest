@@ -20,3 +20,4 @@ D:\NikTest\Filter\bin\Debug\Entity.pdb
 D:\NikTest\Filter\bin\Debug\Newtonsoft.Json.xml
 D:\NikTest\Filter\bin\Debug\System.Web.Mvc.xml
 D:\NikTest\Filter\bin\Debug\SZHomeDLL.xml
+D:\NikTest\Filter\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
