@@ -10,13 +10,9 @@ D:\NikTest\DAL\obj\Debug\DAL.dll
 D:\NikTest\DAL\obj\Debug\DAL.pdb
 E:\NikTest\DAL\bin\Debug\DAL.dll
 E:\NikTest\DAL\bin\Debug\DAL.pdb
-E:\NikTest\DAL\bin\Debug\Common.dll
-E:\NikTest\DAL\bin\Debug\Entity.dll
 E:\NikTest\DAL\bin\Debug\HtmlAgilityPack.dll
 E:\NikTest\DAL\bin\Debug\SZHomeDLL.dll
 E:\NikTest\DAL\bin\Debug\Newtonsoft.Json.dll
-E:\NikTest\DAL\bin\Debug\Common.pdb
-E:\NikTest\DAL\bin\Debug\Entity.pdb
 E:\NikTest\DAL\bin\Debug\SZHomeDLL.xml
 E:\NikTest\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\NikTest\DAL\obj\Debug\DAL.dll
@@ -25,3 +21,7 @@ D:\NikTest\DAL\bin\Debug\SZHome.Common.dll
 D:\NikTest\DAL\bin\Debug\SZHome.Entity.dll
 D:\NikTest\DAL\bin\Debug\SZHome.Common.pdb
 D:\NikTest\DAL\bin\Debug\SZHome.Entity.pdb
+E:\NikTest\DAL\bin\Debug\SZHome.Common.dll
+E:\NikTest\DAL\bin\Debug\SZHome.Entity.dll
+E:\NikTest\DAL\bin\Debug\SZHome.Common.pdb
+E:\NikTest\DAL\bin\Debug\SZHome.Entity.pdb
