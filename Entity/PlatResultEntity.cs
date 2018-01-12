@@ -29,6 +29,11 @@ namespace SZHome.Entity
         public string Price { get; set; }
 
         /// <summary>
+        /// btc价格
+        /// </summary>
+        public decimal BtcPrice { get; set; }
+
+        /// <summary>
         /// 差价
         /// </summary>
         public decimal Margin { get; set; }

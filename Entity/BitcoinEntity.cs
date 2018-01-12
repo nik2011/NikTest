@@ -43,10 +43,14 @@ namespace SZHome.Entity
         public string ExchangeType { get; set; }
 
         /// <summary>
-        /// 当前价格
+        /// 当前人民币价格
         /// </summary>
         public decimal Price { get; set; }
 
+        /// <summary>
+        /// btc价格
+        /// </summary>
+        public decimal BtcPrice { get; set; }
 
         /// <summary>
         /// 成交量
