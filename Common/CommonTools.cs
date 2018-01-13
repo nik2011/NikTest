@@ -315,6 +315,24 @@ namespace SZHome.Common
         }
 
         /// <summary>
+        /// 科学计数转化为数字
+        /// </summary>
+        /// <param name="strData"></param>
+        /// <returns></returns>
+        public static decimal ChangeDataToD(string strData)
+        {
+            decimal dData = 0.0M;
+            if (strData.ToUpper().Contains("E"))
+            {
+                dData = Convert.ToDecimal(decimal.Parse(strData.ToString(), System.Globalization.NumberStyles.Float));
+            }
+            else {
+                dData = Convert.ToDecimal(strData);
+            }
+            return dData;
+        }
+
+        /// <summary>
         /// 获取cookie
         /// </summary>
         /// <param name="postString">请求的数据</param>

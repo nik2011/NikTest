@@ -16,7 +16,7 @@
     数量
     <select id="count" class="h28 lh28 mr8">
         @{
-            for (int i =3; i <= 10; i++)
+            for (int i =2; i <= 10; i++)
             {
                 string sel = "";
                 if (i == 6)
@@ -30,7 +30,7 @@
     差价
     <select id="percent" class="h28 lh28 mr8">
         @{
-            int[] percentArr = {2, 5, 10,15, 20, 30,40,50,60,70 };
+            int[] percentArr = {0,2, 5, 10,15, 20, 30,40,50,60,70 };
             for (int i =0; i <percentArr.Length; i++)
             {
                 string sel = "";
@@ -122,7 +122,7 @@
             </td>
             <td><%=data.PlatFormHtml%></td>
             <td><%=data.ExchangeType%></td>
-            <td><%=data.Price%></td>
+            <td><%=data.BtcPrice%>(¥<%=data.Price%>)</td>
             <td><%=data.Time%></td>
             <td><%=data.Amout%></td>
             <td><%=data.TotalPrice%></td>

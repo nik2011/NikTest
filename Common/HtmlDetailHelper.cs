@@ -46,10 +46,13 @@ namespace SZHome.Common
                     msg = "html结构有变化";
                     return false;
                 }
-                decimal price = (decimal)0;
+                decimal price =0;
+                decimal btcPrice =0;
                 if ((tdNodeList[3].InnerText.Contains("¥")))
                 {
                     price = Convert.ToDecimal(tdNodeList[3].InnerText.Replace("¥", "").Replace(",", ""));
+                    HtmlAttributeCollection attrColl = tdNodeList[3].Attributes;
+                    btcPrice = CommonTools.ChangeDataToD(attrColl["data-btc"].Value);
                 }
                 if (price==0)
                 {
@@ -62,6 +65,7 @@ namespace SZHome.Common
                 coinEnt.PlatFormHtml = tdNodeList[1].InnerHtml.Replace("/exchange", "https://www.feixiaohao.com/exchange");
                 coinEnt.ExchangeType = tdNodeList[2].InnerHtml.Replace("/exchange", "https://www.feixiaohao.com/exchange");
                 coinEnt.Price = price;
+                coinEnt.BtcPrice = btcPrice;
                 coinEnt.Amout = tdNodeList[4].InnerText;
                 coinEnt.TotalPrice = tdNodeList[5].InnerText;
                 coinEnt.Percent = Convert.ToDecimal(tdNodeList[6].InnerText.Replace("%", ""));
@@ -83,20 +87,19 @@ namespace SZHome.Common
                 return false;
             }
             //先按占比排序取前n个，然后按价格排序
-            list = list.OrderByDescending(x => x.Percent).Take(count).ToList().OrderByDescending(x => x.Price).ToList();
+            list = list.OrderByDescending(x => x.Percent).Take(count).ToList().OrderByDescending(x => x.BtcPrice).ToList();
             BitcoinEntity firstEnt = list.First();
             BitcoinEntity lastEnt = list.Last();
-            decimal margin=Convert.ToDecimal((firstEnt.Price - lastEnt.Price).ToString("f2"));
-            decimal percent =margin / firstEnt.Price;
+            decimal margin=firstEnt.BtcPrice - lastEnt.BtcPrice;
+            decimal percent =margin / firstEnt.BtcPrice;
             if (percent >= defaultPrecent)
             {
                 resultList = list;
                 coinResultList.Add(new CoinResultEntity() {
                   Name=coin,
-                  Margin=margin,
-                  Proportion=Convert.ToDecimal((percent * 100).ToString("f2"))
+                  Margin= CommonTools.ChangeDataToD(margin.ToString()),
+                  Proportion =Convert.ToDecimal((percent * 100).ToString("f2"))
                 });
-               // summry =$"{coin}: 最大差价{margin}（{(percent*100).ToString("f2")}%）";
                 return true;
             }
             return false;
@@ -133,23 +136,25 @@ namespace SZHome.Common
             HtmlNodeCollection trNodeList = doc.DocumentNode.SelectNodes("//table[@class='table noBg']//tbody//tr");
             if (trNodeList == null || trNodeList.Count == 0)
             {
-                //LogHelper.LogInfo(coin+ " 获取不到数据");
                 msg = "获取不到数据";
                 return false;
             }
             for (int i = 0; i < trNodeList.Count; i++)
             {
                 BitcoinEntity coinEnt = new BitcoinEntity();
-                HtmlNodeCollection tdNodeList = trNodeList[i].ChildNodes;//SelectNodes("//td");
+                HtmlNodeCollection tdNodeList = trNodeList[i].ChildNodes;
                 if (tdNodeList == null || tdNodeList.Count < 9)
                 {
                     msg = "html结构有变化";
                     return false;
                 }
-                decimal  price=(decimal)0;
+                decimal  price=0;
+                decimal btcPrice = 0;
                 if ((tdNodeList[3].InnerText.Contains("¥")))
                 {
                     price= Convert.ToDecimal(tdNodeList[3].InnerText.Replace("¥", "").Replace(",", ""));
+                    HtmlAttributeCollection attrColl= tdNodeList[3].Attributes;
+                    btcPrice =CommonTools.ChangeDataToD(attrColl["data-btc"].Value);
                 }
                 string name= tdNodeList[1].InnerText.ToLower().Trim();
                
@@ -159,6 +164,7 @@ namespace SZHome.Common
                 coinEnt.NameHtml = tdNodeList[1].InnerHtml.Replace("/currencies", "https://www.feixiaohao.com/currencies");
                 coinEnt.ExchangeType = tdNodeList[2].InnerText.Trim();
                 coinEnt.Price = price;
+                coinEnt.BtcPrice = btcPrice;
                 coinEnt.Amout = tdNodeList[4].InnerText;
                 coinEnt.TotalPrice = tdNodeList[5].InnerText;
                 coinEnt.Percent = Convert.ToDecimal(tdNodeList[6].InnerText.Replace("%", ""));
@@ -205,13 +211,13 @@ namespace SZHome.Common
                 {
                     continue;
                 }
-                decimal price1 = selectList[0].Price;
-                decimal price2= selectList[1].Price;
+                decimal price1 = selectList[0].BtcPrice;
+                decimal price2= selectList[1].BtcPrice;
                 if (price1==0||price2==0)
                 {
                     continue;
                 }
-                decimal margin = Convert.ToDecimal((price1 - price2).ToString("f2"));
+                decimal margin =price1 - price2;
                 decimal percent = margin / price1;
                 if (Math.Abs(percent) < defaultPrecent)
                 {
@@ -219,8 +225,8 @@ namespace SZHome.Common
                 }
                 result.NameHtml = selectList[0].NameHtml;
                 result.ExchangeType = selectList[0].ExchangeType+"-"+ selectList[1].ExchangeType;
-                result.Price = selectList[0].Price + "/" + selectList[1].Price;
-                result.Margin = margin;
+                result.Price = $"{selectList[0].BtcPrice}(¥{selectList[0].Price})/{selectList[1].BtcPrice}(¥{selectList[1].Price})";
+                result.Margin =CommonTools.ChangeDataToD(margin.ToString());
                 result.Percent=Convert.ToDecimal((percent * 100).ToString("f2"));
                 result.Amout= selectList[0].Amout+"/"+ selectList[1].Amout;
                 result.TotalPrice= selectList[0].TotalPrice+"/"+ selectList[1].TotalPrice;
