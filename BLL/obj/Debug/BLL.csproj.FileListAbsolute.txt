@@ -12,7 +12,6 @@ E:\NikTest\BLL\bin\Debug\SZHomeDLL.dll
 E:\NikTest\BLL\bin\Debug\Newtonsoft.Json.dll
 E:\NikTest\BLL\bin\Debug\YiTu.DBUtility.dll
 E:\NikTest\BLL\bin\Debug\DAL.pdb
-E:\NikTest\BLL\bin\Debug\SZHomeDLL.xml
 E:\NikTest\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\NikTest\BLL\bin\Debug\SZHome.BLL.dll
 D:\NikTest\BLL\bin\Debug\SZHome.BLL.pdb

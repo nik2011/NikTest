@@ -31,5 +31,5 @@ E:\NikTest\Filter\bin\Debug\SZHome.Common.pdb
 E:\NikTest\Filter\bin\Debug\SZHome.Entity.pdb
 E:\NikTest\Filter\bin\Debug\Newtonsoft.Json.xml
 E:\NikTest\Filter\bin\Debug\System.Web.Mvc.xml
-E:\NikTest\Filter\bin\Debug\SZHomeDLL.xml
 E:\NikTest\Filter\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\NikTest\Filter\bin\Debug\Microsoft.Web.Infrastructure.dll

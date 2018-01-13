@@ -3,7 +3,6 @@ D:\NikTest\Common\bin\Debug\Newtonsoft.Json.dll
 D:\NikTest\Common\bin\Debug\SZHomeDLL.dll
 D:\NikTest\Common\bin\Debug\SZHomeDLL.xml
 D:\NikTest\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
-E:\NikTest\Common\bin\Debug\SZHomeDLL.xml
 E:\NikTest\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 D:\NikTest\Common\bin\Debug\SZHome.Common.dll.config
 D:\NikTest\Common\bin\Debug\SZHome.Common.dll

@@ -13,7 +13,6 @@ E:\NikTest\DAL\bin\Debug\DAL.pdb
 E:\NikTest\DAL\bin\Debug\HtmlAgilityPack.dll
 E:\NikTest\DAL\bin\Debug\SZHomeDLL.dll
 E:\NikTest\DAL\bin\Debug\Newtonsoft.Json.dll
-E:\NikTest\DAL\bin\Debug\SZHomeDLL.xml
 E:\NikTest\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\NikTest\DAL\obj\Debug\DAL.dll
 E:\NikTest\DAL\obj\Debug\DAL.pdb

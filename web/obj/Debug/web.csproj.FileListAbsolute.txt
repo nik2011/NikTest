@@ -113,7 +113,6 @@ E:\NikTest\web\bin\Microsoft.Owin.xml
 E:\NikTest\web\bin\Microsoft.Owin.Host.SystemWeb.xml
 E:\NikTest\web\bin\Microsoft.Owin.Security.xml
 E:\NikTest\web\bin\Newtonsoft.Json.xml
-E:\NikTest\web\bin\SZHomeDLL.xml
 E:\NikTest\web\bin\System.Web.Razor.xml
 E:\NikTest\web\bin\System.Web.Webpages.xml
 E:\NikTest\web\bin\System.Web.Webpages.Deployment.xml
