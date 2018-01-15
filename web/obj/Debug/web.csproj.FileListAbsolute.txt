@@ -77,13 +77,6 @@ E:\NikTest\web\bin\roslyn\System.Reflection.Metadata.dll
 E:\NikTest\web\bin\roslyn\vbc.exe
 E:\NikTest\web\bin\roslyn\VBCSCompiler.exe
 E:\NikTest\web\bin\roslyn\VBCSCompiler.exe.config
-E:\NikTest\web\bin\web.dll.config
-E:\NikTest\web\bin\web.dll
-E:\NikTest\web\bin\web.pdb
-E:\NikTest\web\bin\BLL.dll
-E:\NikTest\web\bin\Common.dll
-E:\NikTest\web\bin\Entity.dll
-E:\NikTest\web\bin\Filter.dll
 E:\NikTest\web\bin\Microsoft.AI.Agent.Intercept.dll
 E:\NikTest\web\bin\Microsoft.AI.DependencyCollector.dll
 E:\NikTest\web\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -98,7 +91,6 @@ E:\NikTest\web\bin\Microsoft.Owin.dll
 E:\NikTest\web\bin\Microsoft.Owin.Host.SystemWeb.dll
 E:\NikTest\web\bin\Microsoft.Owin.Security.dll
 E:\NikTest\web\bin\Microsoft.Web.Infrastructure.dll
-E:\NikTest\web\bin\Newtonsoft.Json.dll
 E:\NikTest\web\bin\Owin.dll
 E:\NikTest\web\bin\System.Web.Helpers.dll
 E:\NikTest\web\bin\System.Web.Mvc.dll
@@ -109,10 +101,6 @@ E:\NikTest\web\bin\System.Web.Webpages.Razor.dll
 E:\NikTest\web\bin\DAL.dll
 E:\NikTest\web\bin\HtmlAgilityPack.dll
 E:\NikTest\web\bin\YiTu.DBUtility.dll
-E:\NikTest\web\bin\BLL.pdb
-E:\NikTest\web\bin\Common.pdb
-E:\NikTest\web\bin\Entity.pdb
-E:\NikTest\web\bin\Filter.pdb
 E:\NikTest\web\bin\Microsoft.AI.DependencyCollector.xml
 E:\NikTest\web\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\NikTest\web\bin\Microsoft.AI.Web.xml
@@ -125,7 +113,6 @@ E:\NikTest\web\bin\Microsoft.Owin.xml
 E:\NikTest\web\bin\Microsoft.Owin.Host.SystemWeb.xml
 E:\NikTest\web\bin\Microsoft.Owin.Security.xml
 E:\NikTest\web\bin\Newtonsoft.Json.xml
-E:\NikTest\web\bin\SZHomeDLL.xml
 E:\NikTest\web\bin\System.Web.Razor.xml
 E:\NikTest\web\bin\System.Web.Webpages.xml
 E:\NikTest\web\bin\System.Web.Webpages.Deployment.xml
@@ -140,8 +127,6 @@ E:\NikTest\web\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 E:\NikTest\web\bin\zh-Hans\System.Web.Helpers.resources.dll
 E:\NikTest\web\bin\zh-Hans\System.Web.Mvc.resources.dll
 E:\NikTest\web\obj\Debug\web.csprojResolveAssemblyReference.cache
-E:\NikTest\web\obj\Debug\web.dll
-E:\NikTest\web\obj\Debug\web.pdb
 D:\NikTest\web\bin\SZHome.web.dll.config
 D:\NikTest\web\bin\SZHome.web.dll
 D:\NikTest\web\bin\SZHome.web.pdb
@@ -155,3 +140,17 @@ D:\NikTest\web\bin\SZHome.Entity.pdb
 D:\NikTest\web\bin\SZHome.Filter.pdb
 D:\NikTest\web\obj\Debug\SZHome.web.dll
 D:\NikTest\web\obj\Debug\SZHome.web.pdb
+E:\NikTest\web\bin\SZHome.web.dll.config
+E:\NikTest\web\bin\SZHome.web.dll
+E:\NikTest\web\bin\SZHome.web.pdb
+E:\NikTest\web\bin\SZHome.BLL.dll
+E:\NikTest\web\bin\SZHome.Common.dll
+E:\NikTest\web\bin\SZHome.Entity.dll
+E:\NikTest\web\bin\SZHome.Filter.dll
+E:\NikTest\web\bin\SZHome.BLL.pdb
+E:\NikTest\web\bin\SZHome.Common.pdb
+E:\NikTest\web\bin\SZHome.Entity.pdb
+E:\NikTest\web\bin\SZHome.Filter.pdb
+E:\NikTest\web\obj\Debug\SZHome.web.dll
+E:\NikTest\web\obj\Debug\SZHome.web.pdb
+E:\NikTest\web\bin\Newtonsoft.Json.dll
