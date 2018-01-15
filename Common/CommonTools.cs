@@ -322,6 +322,10 @@ namespace SZHome.Common
         public static decimal ChangeDataToD(string strData)
         {
             decimal dData = 0.0M;
+            if (string.IsNullOrWhiteSpace(strData)||strData.Contains("?"))
+            {
+                return dData;
+            }
             if (strData.ToUpper().Contains("E"))
             {
                 dData = Convert.ToDecimal(decimal.Parse(strData.ToString(), System.Globalization.NumberStyles.Float));

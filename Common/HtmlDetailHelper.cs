@@ -48,7 +48,7 @@ namespace SZHome.Common
                 }
                 decimal price =0;
                 decimal btcPrice =0;
-                if ((tdNodeList[3].InnerText.Contains("¥")))
+                if (tdNodeList[3].InnerText.Contains("¥"))
                 {
                     price = Convert.ToDecimal(tdNodeList[3].InnerText.Replace("¥", "").Replace(",", ""));
                     HtmlAttributeCollection attrColl = tdNodeList[3].Attributes;
@@ -56,8 +56,7 @@ namespace SZHome.Common
                 }
                 if (price==0)
                 {
-                    msg = "价格为0";
-                    return false;
+                    continue;
                 }
                 coinEnt.Id = i+1;
                 coinEnt.Name = coin;
