@@ -233,10 +233,10 @@ namespace SZHome.Common
                 result.Time = selectList[0].Time+"/"+ selectList[1].Time;
                 result.Proportion = selectList[0].Percent+"/"+selectList[1].Percent;
                 resultList.Add(result);
-                if (result.Percent >= 10&&coinsSmsList.Contains(selectList[0].NameEnglish.ToLower()))
+                if (result.Percent >=5&&coinsSmsList.Contains(selectList[0].NameEnglish.ToLower()))
                 {
-                    //string phone = "13751131731";
-                    //string msg = $"恭喜您，报名成功：{selectList[0].NameEnglish.Substring(0, 1)}-{result.Percent}" ;
+                    string phone = "13751131731";
+                    string msg = $"恭喜您，报名成功：{selectList[0].NameEnglish.Substring(0, 1)}-{result.Percent}" ;
                     //SmsService.SendSMS(phone,msg);
                 }
             }
