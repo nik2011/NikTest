@@ -222,7 +222,7 @@ namespace SZHome.Common
                 {
                     continue;
                 }
-                decimal p1 = (selectList[1].Price / selectList[1].BtcPrice) * selectList[0].BtcPrice;
+                decimal p1 = (selectList[1].Price / selectList[1].BtcPrice) * selectList[0].BtcPrice;   
                 result.NameHtml = selectList[0].NameHtml;
                 result.ExchangeType = selectList[0].ExchangeType+"-"+ selectList[1].ExchangeType;
                 result.Price = $"{selectList[0].BtcPrice}(¥{p1.ToString("f2")})/{selectList[1].BtcPrice}(¥{selectList[1].Price})";
