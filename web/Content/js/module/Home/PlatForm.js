@@ -120,3 +120,24 @@ function UpdateTitle() {
 
     }, 3000);
 }
+
+//计算差价
+function CaluMargin()
+{
+    if ($("#price1").val() == '') {
+        layermsg("请输入价格1");
+        return;
+    }
+    if ($("#price2").val() == '') {
+        layermsg("请输入价格2");
+        return;
+    }
+    var price1 = parseFloat($("#price1").val());
+    var price2 = parseFloat($("#price2").val());
+    if (price1==0) {
+        layermsg("价格1不能为0");
+        return;
+    }
+    var result = ((price1 - price2)*100 / price1).toFixed(2)+"%";
+    $("#result").text(result);
+}

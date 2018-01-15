@@ -57,7 +57,7 @@ namespace SZHome.Common
                 if (price==0)
                 {
                     msg = "价格为0";
-                    return false;
+                    continue;
                 }
                 coinEnt.Id = i+1;
                 coinEnt.Name = coin;
@@ -223,9 +223,10 @@ namespace SZHome.Common
                 {
                     continue;
                 }
+                decimal p1 = (selectList[1].Price / selectList[1].BtcPrice) * selectList[0].BtcPrice;
                 result.NameHtml = selectList[0].NameHtml;
                 result.ExchangeType = selectList[0].ExchangeType+"-"+ selectList[1].ExchangeType;
-                result.Price = $"{selectList[0].BtcPrice}(¥{selectList[0].Price})/{selectList[1].BtcPrice}(¥{selectList[1].Price})";
+                result.Price = $"{selectList[0].BtcPrice}(¥{p1.ToString("f2")})/{selectList[1].BtcPrice}(¥{selectList[1].Price})";
                 result.Margin =CommonTools.ChangeDataToD(margin.ToString());
                 result.Percent=Convert.ToDecimal((percent * 100).ToString("f2"));
                 result.Amout= selectList[0].Amout+"/"+ selectList[1].Amout;
@@ -233,11 +234,11 @@ namespace SZHome.Common
                 result.Time = selectList[0].Time+"/"+ selectList[1].Time;
                 result.Proportion = selectList[0].Percent+"/"+selectList[1].Percent;
                 resultList.Add(result);
-                if (percent>=10&&coinsSmsList.Contains(selectList[0].NameEnglish.ToLower()))
+                if (result.Percent >=5&&coinsSmsList.Contains(selectList[0].NameEnglish.ToLower()))
                 {
                     string phone = "13751131731";
-                    string msg = $"恭喜您，报名成功：{selectList[0].NameEnglish.Substring(0, 1)}-{percent.ToString("f0")}" ;
-                    SmsService.SendSMS(phone,msg);
+                    string msg = $"恭喜您，报名成功：{selectList[0].NameEnglish.Substring(0, 1)}-{result.Percent}" ;
+                    //SmsService.SendSMS(phone,msg);
                 }
             }
             resultList = resultList.OrderByDescending(x=>x.Percent).ToList();
