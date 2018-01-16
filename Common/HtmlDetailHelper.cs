@@ -231,7 +231,8 @@ namespace SZHome.Common
                 result.Percent=Convert.ToDecimal((percent * 100).ToString("f2"));
                 result.Amout= selectList[0].Amout+"/"+ selectList[1].Amout;
                 result.TotalPrice= selectList[0].TotalPrice+"/"+ selectList[1].TotalPrice;
-                result.Time = selectList[0].Time+"/"+ selectList[1].Time;
+                result.Time = selectList[0].Time+"/"+ selectList[1].Time;  
+
                 result.Proportion = selectList[0].Percent+"/"+selectList[1].Percent;
                 resultList.Add(result);
                 if (result.Percent >=5&&coinsSmsList.Contains(selectList[0].NameEnglish.ToLower()))
