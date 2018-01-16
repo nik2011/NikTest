@@ -530,6 +530,8 @@
     <Content Include="Content\js\lib\uploadify\uploadify.css" />
     <Content Include="Content\js\lib\uploadify\uploadify.swf" />
     <Content Include="Content\js\lib\uploadify\__MACOSX\._uploadify.swf" />
+    <Content Include="Content\js\lib\VueJs\vue.js" />
+    <Content Include="Content\js\lib\VueJs\vue.min.js" />
     <Content Include="Content\js\module\Commons.js" />
     <Content Include="Content\js\module\Home\PlatForm.js" />
     <Content Include="Content\js\module\Home\Index.js" />
@@ -551,6 +553,7 @@
     <Compile Include="Controllers\GoBangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PictureRecogniseController.cs" />
+    <Compile Include="Controllers\VueController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -574,6 +577,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\GoBang\Index.cshtml" />
     <Content Include="Views\Home\PlatForm.cshtml" />
+    <Content Include="Views\Vue\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,0 @@
-D:\NikTest\Entity\bin\Release\Entity.dll
-D:\NikTest\Entity\bin\Release\Entity.pdb
-D:\NikTest\Entity\obj\Release\Entity.dll
-D:\NikTest\Entity\obj\Release\Entity.pdb

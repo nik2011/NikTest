@@ -109,7 +109,6 @@ function layerLoading(vOptions) {
     }
 }
 
-
 //截取指定长度的字符串
 function subStr(input, num) {
     if (input == "" || input.length <= num) {

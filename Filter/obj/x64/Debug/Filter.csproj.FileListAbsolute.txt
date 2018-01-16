@@ -1,4 +1,0 @@
-D:\NikTest\Filter\bin\x64\Debug\Filter.dll
-D:\NikTest\Filter\bin\x64\Debug\Filter.pdb
-D:\NikTest\Filter\obj\x64\Debug\Filter.dll
-D:\NikTest\Filter\obj\x64\Debug\Filter.pdb

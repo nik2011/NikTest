@@ -1,9 +1,0 @@
-@charset "utf-8";
-/*分页*/
-.page{clear:both; height:auto; margin:20px 0; overflow:hidden;}
-.page .pages{height:28px;}
-.page .pages a {text-decoration: none;border: 1px solid #ccc;color: #333; border-radius:5px;background:#eee;  }
-.page .pages a, .page .pages span {display: inline-block; float:left;padding: 0.3em 0.6em;margin-right: 8px; font-size:14px;  }
-.page .pages a:hover,.page .pages a.currentPage{border:1px solid #5a5858;background:#666;color:#fff;}
-.page .pages .current {color: #fff;border:1px solid #5a5858; border-radius:5px; background:#666;}
-.page .pages .current.prev, .page .pages .current.next{color:#333;border-color:#ccc;background:#eee;}

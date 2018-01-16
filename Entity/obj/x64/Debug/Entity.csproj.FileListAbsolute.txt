@@ -1,4 +1,0 @@
-D:\NikTest\Entity\bin\x64\Debug\Entity.dll
-D:\NikTest\Entity\bin\x64\Debug\Entity.pdb
-D:\NikTest\Entity\obj\x64\Debug\Entity.dll
-D:\NikTest\Entity\obj\x64\Debug\Entity.pdb

@@ -225,7 +225,7 @@ namespace SZHome.Common
                 }
                 decimal p1 = (selectList[1].Price / selectList[1].BtcPrice) * selectList[0].BtcPrice;
                 result.NameHtml = selectList[0].NameHtml;
-                result.ExchangeType = selectList[0].ExchangeType+"-"+ selectList[1].ExchangeType;
+                result.ExchangeType = $"{selectList[0].ExchangeType}({selectList[0].PlatForm})-{selectList[1].ExchangeType}({selectList[1].PlatForm})";
                 result.Price = $"{selectList[0].BtcPrice}(¥{p1.ToString("f2")})/{selectList[1].BtcPrice}(¥{selectList[1].Price})";
                 result.Margin =CommonTools.ChangeDataToD(margin.ToString());
                 result.Percent=Convert.ToDecimal((percent * 100).ToString("f2"));
