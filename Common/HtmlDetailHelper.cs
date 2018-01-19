@@ -213,7 +213,12 @@ namespace SZHome.Common
                 }
                 decimal price1 = selectList[0].BtcPrice;
                 decimal price2= selectList[1].BtcPrice;
-                if (price1==0||price2==0)
+                if (selectList[0].NameEnglish.ToLower() == "btc")
+                {
+                    price1 = selectList[0].Price;
+                    price2 = selectList[1].Price;
+                }
+                if (price1 == 0 || price2 == 0)
                 {
                     continue;
                 }
@@ -224,6 +229,10 @@ namespace SZHome.Common
                     continue;
                 }
                 decimal p1 = (selectList[1].Price / selectList[1].BtcPrice) * selectList[0].BtcPrice;
+                if (selectList[0].NameEnglish.ToLower()=="btc")
+                {
+                    p1 = selectList[0].Price;
+                }
                 result.NameHtml = selectList[0].NameHtml;
                 result.ExchangeType = $"{selectList[0].ExchangeType}({selectList[0].PlatForm})-{selectList[1].ExchangeType}({selectList[1].PlatForm})";
                 result.Price = $"{selectList[0].BtcPrice}(¥{p1.ToString("f2")})/{selectList[1].BtcPrice}(¥{selectList[1].Price})";

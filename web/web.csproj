@@ -578,6 +578,7 @@
     <Content Include="Views\GoBang\Index.cshtml" />
     <Content Include="Views\Home\PlatForm.cshtml" />
     <Content Include="Views\Vue\Index.cshtml" />
+    <Content Include="Views\Vue\Index1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

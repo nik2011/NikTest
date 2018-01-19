@@ -13,5 +13,10 @@ namespace SZHome.web.Controllers
         {
             return View();
         }
+
+        public ActionResult Index1()
+        {
+            return View();
+        }
     }
 }

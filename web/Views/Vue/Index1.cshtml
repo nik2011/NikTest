@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 3. #app是Vue实例挂载的元素，应该在挂载元素范围内使用组件-->
+        <my-component1></my-component1>
+
+        @*<parent-component></parent-component>*@
+    </div>
+
+    <div id="app2">
+
+        <my-component2></my-component2>
+
+    </div>
+    <script type="text/template" id="component">
+        <div>This is the first component!</div>
+    </script>
+
+    <template id="myComponent">
+        <div>This is the second component!</div>
+    </template>
+
+    <script src="/Content/js/lib/VueJs/vue.js"></script>
+
+    <script>
+
+        // 1.创建一个组件构造器
+        var myComponent = Vue.extend({
+            template: '<div>This is my first component!</div>'
+        })
+
+        // 2.注册组件，并指定组件的标签，组件的HTML标签为<my-component>
+        Vue.component('my-component', myComponent)
+
+      
+
+        var Child = Vue.extend({
+            template: '<p>This is a child component!</p>'
+        })
+
+        var Parent = Vue.extend({
+            // 在Parent组件内使用<child-component>标签
+            template: '<p>This is a Parent component</p><child-component></child-component>',
+            components: {
+                // 局部注册Child组件，该组件只能在Parent组件内使用
+                'child-component': Child
+            }
+        })
+
+        // 全局注册Parent组件
+        Vue.component('parent-component', Parent)
+
+
+        // 全局注册，my-component1是标签名称
+        Vue.component('my-component1', {
+            template: '#component'
+        })
+
+        new Vue({
+            el: '#app'
+        });
+
+        var vm2 = new Vue({
+            el: '#app2',
+            components: {
+                // 局部注册，my-component2是标签名称
+                'my-component2': {
+                    template: '#myComponent'
+                },
+                // 局部注册，my-component3是标签名称
+                'my-component3': {
+                    template: '<div>This is the third component!</div>'
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
