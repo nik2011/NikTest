@@ -13,10 +13,31 @@
 <body>
     <div id="app">
         <!-- 3. #app是Vue实例挂载的元素，应该在挂载元素范围内使用组件-->
-        <my-component1></my-component1>
+        @*<my-component1></my-component1>*@
 
         @*<parent-component></parent-component>*@
+
+        <table>
+            <tr>
+                <th colspan="3">父组件数据</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ name }}</td>
+                <td><input type="text" v-model="name" /></td>
+            </tr>
+            <tr>
+                <td>age</td>
+                <td>{{ age }}</td>
+                <td><input type="text" v-model="age" /></td>
+            </tr>
+        </table>
+
+        <my-component v-bind:name="name" v-bind:age="age"></my-component>
     </div>
+
+
+
 
     <div id="app2">
 
@@ -27,8 +48,26 @@
         <div>This is the first component!</div>
     </script>
 
-    <template id="myComponent">
+    @*<template id="myComponent">
         <div>This is the second component!</div>
+    </template>*@
+
+    <template id="myComponent">
+        <table>
+            <tr>
+                <th colspan="3">子组件数据</td>
+            </tr>
+            <tr>
+                <td>my name</td>
+                <td>{{ name }}</td>
+                <td><input type="text" v-model="name" /></td>
+            </tr>
+            <tr>
+                <td>my age</td>
+                <td>{{ age }}</td>
+                <td><input type="text" v-model="age" /></td>
+            </tr>
+        </table>
     </template>
 
     <script src="/Content/js/lib/VueJs/vue.js"></script>
@@ -36,14 +75,14 @@
     <script>
 
         // 1.创建一个组件构造器
-        var myComponent = Vue.extend({
-            template: '<div>This is my first component!</div>'
-        })
+        //var myComponent = Vue.extend({
+        //    template: '<div>This is my first component!</div>'
+        //})
 
         // 2.注册组件，并指定组件的标签，组件的HTML标签为<my-component>
-        Vue.component('my-component', myComponent)
+       // Vue.component('my-component', myComponent)
 
-      
+
 
         var Child = Vue.extend({
             template: '<p>This is a child component!</p>'
@@ -63,27 +102,41 @@
 
 
         // 全局注册，my-component1是标签名称
-        Vue.component('my-component1', {
-            template: '#component'
-        })
+        //Vue.component('my-component1', {
+        //    template: '#component'
+        //})
 
         new Vue({
-            el: '#app'
-        });
+            el: '#app',
+            data: {
+                name: 'keepfool',
+                age: 28
 
-        var vm2 = new Vue({
-            el: '#app2',
+            },
             components: {
-                // 局部注册，my-component2是标签名称
-                'my-component2': {
-                    template: '#myComponent'
-                },
-                // 局部注册，my-component3是标签名称
-                'my-component3': {
-                    template: '<div>This is the third component!</div>'
+                'my-component': {
+                    template: '#myComponent',
+                    props: {
+                        name:String,
+                        age:0
+                    }
                 }
             }
-        })
+        });
+
+        //var vm2 = new Vue({
+        //    el: '#app2',
+        //    components: {
+        //        // 局部注册，my-component2是标签名称
+        //        'my-component2': {
+        //            template: '#myComponent'
+        //        },
+        //        // 局部注册，my-component3是标签名称
+        //        'my-component3': {
+        //            template: '<div>This is the third component!</div>'
+        //        }
+        //    }
+        //})
 
     </script>
 </body>
