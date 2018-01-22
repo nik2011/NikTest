@@ -1,9 +1,0 @@
-﻿
-2018/1/5 9:44:13：https://www.feixiaohao.com/currencies/bitcoin/ 获取报错：基础连接已经关闭: 未能为 SSL/TLS 安全通道建立信任关系。
-2018/1/5 9:44:39：https://www.feixiaohao.com/currencies/bitcoin/ 获取报错：基础连接已经关闭: 未能为 SSL/TLS 安全通道建立信任关系。
-2018/1/5 9:46:32：https://www.feixiaohao.com/currencies/bitcoin/ 获取报错：基础连接已经关闭: 未能为 SSL/TLS 安全通道建立信任关系。
-2018/1/5 9:49:59：https://www.feixiaohao.com/currencies/bitcoin/ 获取报错：远程服务器返回错误: (404) 未找到。
-2018/1/5 9:50:17：https://www.feixiaohao.com/currencies/bitcoin/ 获取报错：远程服务器返回错误: (404) 未找到。
-2018/1/5 9:51:20：https://www.feixiaohao.com/currencies/bitcoin/ 获取报错：远程服务器返回错误: (404) 未找到。
-2018/1/5 9:54:22：https://www.feixiaohao.com/currencies/bitcoin/ 获取报错：远程服务器返回错误: (404) 未找到。
-2018/1/5 15:15:32：https://www.feixiaohao.com/currencies/bcd 获取报错：远程服务器返回错误: (500) 内部服务器错误。
