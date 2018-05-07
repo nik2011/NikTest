@@ -39,7 +39,7 @@ $(function () {
         window.location.href = window.location.href;
     });
 
-    InitTimer();
+    //InitTimer();
 });
 
 //初始化涮新时间

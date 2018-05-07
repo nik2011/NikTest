@@ -1,16 +1,10 @@
 D:\NikTest\SmallSpider_v2\bin\Debug\SmallSpider_v2.exe.config
 D:\NikTest\SmallSpider_v2\bin\Debug\SmallSpider_v2.exe
 D:\NikTest\SmallSpider_v2\bin\Debug\SmallSpider_v2.pdb
-D:\NikTest\SmallSpider_v2\bin\Debug\BLL.dll
-D:\NikTest\SmallSpider_v2\bin\Debug\Common.dll
-D:\NikTest\SmallSpider_v2\bin\Debug\Entity.dll
 D:\NikTest\SmallSpider_v2\bin\Debug\SZHomeDLL.dll
 D:\NikTest\SmallSpider_v2\bin\Debug\DAL.dll
 D:\NikTest\SmallSpider_v2\bin\Debug\Newtonsoft.Json.dll
 D:\NikTest\SmallSpider_v2\bin\Debug\YiTu.DBUtility.dll
-D:\NikTest\SmallSpider_v2\bin\Debug\BLL.pdb
-D:\NikTest\SmallSpider_v2\bin\Debug\Common.pdb
-D:\NikTest\SmallSpider_v2\bin\Debug\Entity.pdb
 D:\NikTest\SmallSpider_v2\bin\Debug\SZHomeDLL.xml
 D:\NikTest\SmallSpider_v2\bin\Debug\DAL.pdb
 D:\NikTest\SmallSpider_v2\obj\Debug\SmallSpider_v2.csprojResolveAssemblyReference.cache
@@ -19,3 +13,10 @@ D:\NikTest\SmallSpider_v2\obj\Debug\SmallSpider_v2.Url.resources
 D:\NikTest\SmallSpider_v2\obj\Debug\SmallSpider_v2.csproj.GenerateResource.Cache
 D:\NikTest\SmallSpider_v2\obj\Debug\SmallSpider_v2.exe
 D:\NikTest\SmallSpider_v2\obj\Debug\SmallSpider_v2.pdb
+D:\NikTest\SmallSpider_v2\bin\Debug\SZHome.BLL.dll
+D:\NikTest\SmallSpider_v2\bin\Debug\SZHome.Common.dll
+D:\NikTest\SmallSpider_v2\bin\Debug\SZHome.Entity.dll
+D:\NikTest\SmallSpider_v2\bin\Debug\HtmlAgilityPack.dll
+D:\NikTest\SmallSpider_v2\bin\Debug\SZHome.BLL.pdb
+D:\NikTest\SmallSpider_v2\bin\Debug\SZHome.Common.pdb
+D:\NikTest\SmallSpider_v2\bin\Debug\SZHome.Entity.pdb
