@@ -104,7 +104,7 @@ namespace web.Controllers
                 string htmlDetail = RequestHelper.ImplementOprater(requestEnt);
                 string msg = "";
                 List<BitcoinEntity> list = new List<BitcoinEntity>();
-                bool matchResult = HtmlDetailHelper.HandlePlatFornHtml(item, htmlDetail,ref list,ref msg);
+                bool matchResult =HtmlDetailHelper.HandlePlatFornHtml(item, htmlDetail,ref list,ref msg);
                 if (!matchResult)
                 {
                     LogHelper.LogInfo(item + ": " + msg);

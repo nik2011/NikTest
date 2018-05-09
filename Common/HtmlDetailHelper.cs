@@ -147,7 +147,7 @@ namespace SZHome.Common
             BitcoinEntity firstEnt = list.First();
             BitcoinEntity lastEnt = list.Last();
             decimal margin = firstEnt.BtcPrice - lastEnt.BtcPrice;
-            if (firstEnt.BtcPrice>0)
+            if (firstEnt.BtcPrice > 0)
             {
                 decimal percent = margin / firstEnt.BtcPrice;
                 if (percent >= defaultPrecent)
@@ -189,19 +189,24 @@ namespace SZHome.Common
         public static bool HandlePlatFornHtml(string platForm, string htmlDetail, ref List<BitcoinEntity> resultList, ref string msg)
         {
             htmlDetail = CommonTools.Compress(htmlDetail);
-            HtmlDocument doc = new HtmlDocument();
-            doc.LoadHtml(htmlDetail);
+            //HtmlDocument doc = new HtmlDocument();
+            //doc.LoadHtml(htmlDetail);
+            // LogHelper.LogInfo(htmlDetail);
+            Regex tableRegex = new Regex("<table class=\"table noBg\">[\\s\\S]+?</table>", RegexOptions.IgnoreCase);
+            Regex trRegex = new Regex(@"<tr[\s\S]+?添加自选</div>", RegexOptions.IgnoreCase);
+            Regex tdRegex = new Regex(@"<tr><td>[\d\*]+<td>([\s\S]+?)<td>([^<]+?)<td[^>]+?data-btc=([\d\.]+)[^>]+?>([^<]+?)<td>([^<]+?)<td[^>]+?>([^<]+?)<td>([^<]+?)<td>([\d\u4e00-\u9fa5]+?)<td>", RegexOptions.IgnoreCase);
+            Regex platRegex = new Regex(@"<img[^>]+?>([^>]+?)</a>", RegexOptions.IgnoreCase);
 
-            HtmlNode tableNode = doc.DocumentNode.SelectSingleNode("//table[@class='table noBg']//tbody");
-            if (tableNode == null)
+            Match tablematchs = tableRegex.Match(htmlDetail);
+            if (!tablematchs.Success)
             {
                 msg = "获取不到数据";
                 return false;
             }
-            Regex trRegex = new Regex(@"<tr[\s\S]*?添加自选</div>", RegexOptions.IgnoreCase);
-            Regex tdRegex = new Regex("<tr><td>[\\d\\*]+<td>([\\s\\S]+?)<td>([^<]+?)<td class=\"price\"[^>]+?data-btc=\"([\\d\\.]+)\"[^>]+?>([^<]+?)<td>([^<]+?)<td class=\"volume\"[^>]+?>([^<]+?)<td>([^<]+?)<td>([\\d\u4e00-\u9fa5]+?)<td>", RegexOptions.IgnoreCase);
-            Regex platRegex = new Regex(@"<img[^>]+?>([^>]+?)</a>", RegexOptions.IgnoreCase);
-            MatchCollection matchs = trRegex.Matches(tableNode.InnerHtml);
+            //HtmlNode tableNode = doc.DocumentNode.SelectSingleNode("//table[@class='table noBg']//tbody");
+            // LogHelper.LogInfo(tablematchs.Value);
+            //tableNode.InnerHtml = "";
+            MatchCollection matchs = trRegex.Matches(tablematchs.Value);
             int i = 0;
             foreach (Match item in matchs)
             {
@@ -212,7 +217,7 @@ namespace SZHome.Common
                     i++;
                     BitcoinEntity coinEnt = new BitcoinEntity();
                     coinEnt.Id = i + 1;
-                    coinEnt.PlatForm =platForm;
+                    coinEnt.PlatForm = platForm;
                     coinEnt.NameHtml = tdmatchs.Groups[1].Value.Replace("/exchange", "https://www.feixiaohao.com/exchange");
                     Match platMatch = platRegex.Match(coinEnt.NameHtml);
                     if (platMatch.Success)
